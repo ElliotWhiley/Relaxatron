@@ -1,8 +1,7 @@
 # Relaxatron
-Global Game Jam
 
 Source for an audiovisual unity scene that helps you relax. Developed as part of the 2016 Global Game Jam Challenge
-
+We have a public Trello board you can [view here](https://trello.com/b/icn1yLQg/relaxatron-roadmap)
 
 ###THE BEER-WARE LICENSE (Revision 42):
 

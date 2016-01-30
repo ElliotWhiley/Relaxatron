@@ -1,5 +1,4 @@
 # Relaxatron
-##Global Game Jam 2016 Project
 
 Source for an audiovisual unity scene that helps you relax. Developed as part of the 2016 Global Game Jam Challenge
 

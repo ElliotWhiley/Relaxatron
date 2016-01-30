@@ -18,14 +18,14 @@ public class newSpawner : MonoBehaviour {
 
     private void CreateDataObject()
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < 10; i++)
         {
             GameObject clone = Instantiate(spawnTemplate, transform.position, transform.rotation) as GameObject;
             Vector3 dir = new Vector3(Random.Range(0f, 1.0f), Random.Range(-1.0f, 1.00f), Random.Range(-1.0f, 1.0f));
             Debug.Log(dir);
 
-            clone.GetComponent<Rigidbody>().velocity = dir.normalized * 14.0f;
-            Destroy(clone, 20.0f);
+            clone.GetComponent<Rigidbody>().velocity = dir.normalized * 25.0f;
+            Destroy(clone, 15.0f);
 
         }
 

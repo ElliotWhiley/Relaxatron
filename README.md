@@ -1,6 +1,6 @@
 # Relaxatron
 
-Source for an audiovisual unity scene that helps you relax. Developed as part of the 2016 Global Game Jam Challenge
+Source for an audiovisual scene that helps you relax. Developed as part of the 2016 Global Game Jam Challenge with the Unity engine.
 
 We have a public Trello board you can [view here](https://trello.com/b/icn1yLQg/relaxatron-roadmap)
 

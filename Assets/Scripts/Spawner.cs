@@ -10,7 +10,9 @@ public class Spawner : MonoBehaviour {
     public GameObject prefab;
 
     void Start() {
-        SpawnSchool();
+        Time.timeScale = 0;
+        SpawnSphericalSchool();
+        Time.timeScale = 1;
         //Vector3 center = transform.position;
         //for (int i = 0; i < numObjects; i++)
         //{
@@ -30,19 +32,38 @@ public class Spawner : MonoBehaviour {
         return pos;
     }
 
-    void SpawnSchool() {
-        Vector3 spawnCentre = new Vector3(-500, 200, -500);
-        int spawnRadius = 20;
-        float spacing = 2;
+    void SpawnSphericalSchool() {
+        Vector3 spawnCentre = new Vector3(-500, 260, -500);
+        int spawnRadius = 50;
+        float spacingRadius = 10;
+        float scale = 3f;
+
         for (int i = 0; i < numFishies; i++) {
             // generate random pos within spawn sphere
             Vector3 spawnPos = spawnCentre + Random.insideUnitSphere * spawnRadius;
             // check if that pos is 'free'
-            Collider[] collisions = Physics.OverlapSphere(spawnCentre, spacing);
+            Collider[] collisions = Physics.OverlapSphere(spawnCentre, spacingRadius);
             Debug.Log(collisions.Length);
             if (collisions.Length == 1) {
+                // set fish rotation
+                Quaternion rotation = Quaternion.Euler(1500, 800, 1500);
+               // Quaternion rotation = Quaternion.Euler(0, 0, 0);
                 // spawn fish at pos
-                Instantiate(prefab, spawnPos, Quaternion.Euler(new Vector3(0, 0, 0)));
+                GameObject fish = (GameObject) Instantiate(prefab, spawnPos, rotation);
+                // set fish size
+                fish.transform.localScale += new Vector3(scale, scale, scale);
+                // set fish velocity
+                //fish.GetComponent<Rigidbody>().velocity = Quaternion.Euler(1500, 800, 1500);
+                //fish.transform.forward = ;  
+
+
+                //fish.transform.rotation = Quaternion.identity;
+
+                fish.GetComponent<Rigidbody>().AddForce(transform.forward * 100);
+                //prefab.GetComponent<Rigidbody>().velocity = ;
+
+
+
             }
         }
     }

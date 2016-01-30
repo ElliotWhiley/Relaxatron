@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviour {
         //    Vector3 pos = RandomCircle(center, 5.0f);
         //    Quaternion rot = Quaternion.FromToRotation(Vector3.forward, center - pos);
         //    Instantiate(prefab, pos, rot);
+        // prefab.AddForce(prefab.transform.forward * Bullet_Forward_Force * (bulletForceMin + rb.velocity.magnitude), ForceMode.Impulse);
         //}
     }
 
